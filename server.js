@@ -36,11 +36,6 @@ app.use(
 
 app.use(passUserToView);
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-    user: req.session.user,
-  });
-});
 
 app.get('/vip-lounge', (req, res) => {
   if (req.session.user) {
@@ -53,6 +48,23 @@ app.get('/vip-lounge', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/posts', postsController)
+
+
+// server.js
+
+app.get('/', (req, res) => {
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/posts`);
+  } else {
+    res.render('index.ejs');
+  }
+});
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
