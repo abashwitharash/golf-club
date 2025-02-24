@@ -8,19 +8,19 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Game</h1>
-<form action="" method="">
+<form action="/users/<%= user._id %>/golfs" method="POST">
     <label for="course">Course:</label>
     <input type="text" name="course" id="course" />
   
     <label for="score">Score:</label>
-    <input type="number" name="score" id="score" />
+    <input type="text" name="score" id="score" />
 
     <label for="holes">Holes Played:</label>
-    <input type="number" name="score" id="score" />
+    <input type="text" name="holes" id="holes" />
   
     <label for="notes">Notes:</label>
     <textarea name="notes" id="notes"></textarea>
-  
+  <div>
     <label for="difficulty">Difficulty:</label>
     <select id="difficulty" name="difficulty">
       <option value="easy">Easy</option>
@@ -28,6 +28,8 @@
       <option value="hard">Hard</option>
       <option value="never again">Never Again!</option>
     </select>
+  </div>
+    <button type="submit">Add Game</button>
   </form>
   </body>
 </html>

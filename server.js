@@ -12,7 +12,7 @@ const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
-const postsController = require('./controllers/posts.js');
+const golfsController = require('./controllers/golfs.js');
 
 
 const port = process.env.PORT ? process.env.PORT : '3000';
@@ -38,7 +38,7 @@ app.use(passUserToView);
 
 app.get('/', (req, res) => {
   if (req.session.user) {
-    res.redirect(`/users/${req.session.user._id}/posts`);
+    res.redirect(`/users/${req.session.user._id}/golfs`);
   } else {
     res.render('index.ejs');
   }
@@ -55,7 +55,7 @@ app.get('/vip-lounge', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
-app.use('/users/:userId/posts', postsController)
+app.use('/users/:userId/golfs', golfsController)
 
 
 

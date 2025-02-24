@@ -10,6 +10,15 @@
   <body>
     <%- include('../partials/_navbar.ejs') %> 
     <h1>My Posts</h1>
-    <a href="/users/<%= user._id%>/posts/new">Add a Game</a>
+    <a href="/users/<%= user._id%>/golfs/new">Add a Game</a>
+    <ul>
+      <% golfs.forEach((golf)=>{ %>
+      <li>
+        <a href="/users/<%= user._id %>/golfs/<%= golf._id %>">
+        <%= golf.course%>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
   </body>
 </html>

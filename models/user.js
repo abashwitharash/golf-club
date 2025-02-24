@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const golfSchema = new mongoose.Schema({
+const golfsSchema = new mongoose.Schema({
   course: {
     type: String, 
     required: true,
@@ -10,7 +10,7 @@ const golfSchema = new mongoose.Schema({
     required: true, 
   },
   holes: {
-    type: Number
+    type: Number,
   },
   notes: {
     type: String,
@@ -31,7 +31,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  golf: [golfSchema],
+  golfs: [golfsSchema],
 });
 
 
