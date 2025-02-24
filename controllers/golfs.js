@@ -38,11 +38,37 @@ router.post('/', async (req, res) => {
 
 
 
-router.get('/:applicationId', async (req, res) => {
+router.get('/:golfId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const golf = currentUser.golfs.id(req.params.golfId);
     res.render('golfs/show.ejs', {
+      golf: golf,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
+router.delete('/:golfId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.golfs.id(req.params.golfId).deleteOne();
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/golfs`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+router.get('/:golfId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const golf = currentUser.golfs.id(req.params.golfId);
+    res.render('golfs/edit.ejs', {
       golf: golf,
     });
   } catch (error) {
