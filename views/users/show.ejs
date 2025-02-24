@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= user.username %>'s Games</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1> <%= user.username %>'s Games</h1>
+
+    <% if (golfs && golfs.length > 0) { %>
+        <ul>
+            <% golfs.forEach(golf => { %>
+                <a href="/users/<%= user._id %>/vip/<%= golf._id %>">
+                <li><%= golf.course %></li>
+            </a>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No Games PLayed</p>
+    <% } %>
+    <a href="/">Back to My Games</a>
+  </body>
+</html>
