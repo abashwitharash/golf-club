@@ -17,7 +17,7 @@ const golfsSchema = new mongoose.Schema({
   },
   difficulty: {
     type: String, 
-    enum: ['easy', 'medium', 'hard', 'never again'],
+    enum: ['none','easy', 'medium', 'hard', 'never again'],
   },
 })
 

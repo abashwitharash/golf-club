@@ -77,6 +77,22 @@ router.get('/:golfId/edit', async (req, res) => {
   }
 });
 
+router.put('/:golfId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const golf = currentUser.golfs.id(req.params.golfId);
+    golf.set(req.body);
+    await currentUser.save();
+    res.redirect(
+      `/users/${currentUser._id}/golfs/${req.params.golfId}`
+    );
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+
 
 
 module.exports = router;

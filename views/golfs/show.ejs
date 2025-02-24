@@ -7,22 +7,36 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    
     <% if (golf.course) { %>
       <h1>Game: <%= golf.course %></h1>
     <% } %>
-    <p>Holes Played: <%= golf.holes %></p>
+    
+    <% if (golf.holes) { %>
+      <p>Holes Played: <%= golf.holes %></p>
+    <% } %>
+    
     <% if (golf.score) { %>
       <p>Score: <%= golf.score %></p>
     <% } %>
-    <p>Difficulty: <%= golf.difficulty %></p>
-    <p>Notes: <%= golf.notes %></p>
+    
+    <% if (golf.difficulty && golf.difficulty !== 'none') { %>
+        <p>Difficulty: <%= golf.difficulty %></p>
+      <% } %>
+      
+    
+    <% if (golf.notes && golf.notes !== 'none') { %>
+      <p>Notes: <%= golf.notes %></p>
+    <% } %>
+    
     <a href="/users/<%= user._id %>/golfs/<%= golf._id %>/edit">
-        Edit this Game
-      </a>
+      Edit this Game
+    </a>
+    
     <form
-    action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE"
-    method="POST">
-    <button type="submit">Delete this Game</button>
-  </form>
+      action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE"
+      method="POST">
+      <button type="submit">Delete this Game</button>
+    </form>
   </body>
 </html>
