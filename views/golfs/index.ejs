@@ -8,8 +8,11 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %> 
+    <div class="all-golfs-body">
+      <div class="all-golfs-header">
     <h1>My Posts</h1>
-    <a href="/users/<%= user._id%>/golfs/new">Add a Game</a>
+    <a  class="add-golf-link" href="/users/<%= user._id%>/golfs/new">Add a Game</a>
+  </div>
     <ul>
       <% golfs.forEach((golf)=>{ %>
       <li>
@@ -19,5 +22,6 @@
       </li>
       <% }) %>
     </ul>
+  </div>
   </body>
 </html>
