@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Users Index</title>
   </head>
   <body>
@@ -11,10 +12,8 @@
    
     <ul>
         <% users.forEach(communityUser => { %>
-          <li>
-            <a href="/users/<%= communityUser._id %>"><%= communityUser.username %></a>
-          </li>
-        <% }) %>
+            <li><a href="/users/<%= user._id %>/users/<%= communityUser._id %>"><%= communityUser.username %></a></li>
+          <% }) %>
       </ul>
   </body>
 </html>

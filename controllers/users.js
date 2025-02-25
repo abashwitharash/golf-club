@@ -24,23 +24,6 @@ router.get('/:userId', async (req, res) => {
         res.redirect('/');
     }
 });
-
-// In users.js
-// VIP detail view for a specific golf game from a given user
-router.get('/:userId/vip/:golfId', async (req, res) => {
-    try {
-      const user = await User.findById(req.params.userId);
-      if (!user) return res.redirect('/');
-  
-      const golf = user.golfs.id(req.params.golfId);
-      if (!golf) return res.redirect(`/users/${user._id}`);
-  
-      res.render('vip/show.ejs', { user, golf });
-    } catch (error) {
-      console.log(error);
-      res.redirect('/');
-    }
-  });
   
 
 

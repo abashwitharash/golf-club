@@ -108,7 +108,24 @@ router.put('/users/vip', async (req, res) => {
   }
 });
 
-
+router.get('/community/:userId/:golfId', async (req, res) => {
+  try {
+      console.log(req.params)
+    const communityUser = await User.findById(req.params.userId);
+    console.log(communityUser)
+    const golf = communityUser.golfs.id(req.params.golfId);
+    console.log(golf)
+    
+    
+    res.render('golfs/vip.ejs', {
+      golf: golf,
+    });
+  } catch (error) {
+    
+    console.log(error);
+    res.redirect('/');
+  }
+});
 
 
 module.exports = router;

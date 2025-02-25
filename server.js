@@ -16,6 +16,7 @@ const golfsController = require('./controllers/golfs.js');
 const usersController = require('./controllers/users.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
+const path = require('path');
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -26,6 +27,7 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 // app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -50,14 +52,6 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/golfs', golfsController)
 app.use('/users/:userId/users', usersController);
-
-app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.render("/vip-lounge");
-  } else {
-    res.send('Sorry, no guests allowed.');
-  }
-});
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
