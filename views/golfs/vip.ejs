@@ -3,32 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Golf Game at <%= golf.course %></title>
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title>Golf Game: <%= golf.course %></title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    
-    <% if (golf.course) { %>
-      <h1>Game: <%= golf.course %></h1>
-    <% } %>
-    
-    <% if (golf.holes) { %>
-      <p>Holes Played: <%= golf.holes %></p>
-    <% } %>
-    
-    <% if (golf.score) { %>
-      <p>Score: <%= golf.score %></p>
-    <% } %>
-    
-    <% if (golf.difficulty && golf.difficulty !== 'none') { %>
-      <p>Difficulty: <%= golf.difficulty %></p>
-    <% } %>
-      
-    <% if (golf.notes && golf.notes !== 'none') { %>
-      <p>Notes: <%= golf.notes %></p>
-    <% } %>
 
-    <a href="/users/<%= user._id %>">Back to <%= user.username %>'s Games</a>
+    <div class="show-body">
+      <div class="show-header">
+        <h1>Golf Course: <%= golf.course %></h1>
+        <div class="show-sidebar">
+          <div class="show-actions">
+            <form action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE" method="POST">
+            </form>
+          </div>
+          <p>Current Difficulty: <%= golf.difficulty %></p>
+        </div>
+      </div>
+      <div class="show-notes-container">
+        <% if (golf.notes && golf.notes !== 'none') { %>
+        <div class="show-notes">
+          <h2>Notes:</h2>
+          <p><%= golf.notes %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
   </body>
 </html>

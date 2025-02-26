@@ -9,33 +9,27 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
 
-    <div class="golf-container">
-      <% if (golf.course) { %>
-        <h1 class="golf-title">Golf Course: <%= golf.course %></h1>
-      <% } %>
+    <div class="show-body">
+      <div class="show-header">
+        <h1>Golf Course: <%= golf.course %></h1>
+        <div class="show-sidebar">
+          <div class="show-actions">
+            <a href="/users/<%= user._id %>/golfs/<%= golf._id %>/edit">Edit this Game</a>
+            <form action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete this Game</button>
+            </form>
+          </div>
+          <p>Current Difficulty: <%= golf.difficulty %></p>
+        </div>
+      </div>
 
-      <% if (golf.holes) { %>
-        <p class="golf-info">Holes Played: <%= golf.holes %></p>
-      <% } %>
-
-      <% if (golf.score) { %>
-        <p class="golf-info">Score: <%= golf.score %></p>
-      <% } %>
-
-      <% if (golf.difficulty && golf.difficulty !== 'none') { %>
-        <p class="golf-info">Difficulty: <%= golf.difficulty %></p>
-      <% } %>
-
-      <% if (golf.notes && golf.notes !== 'none') { %>
-        <p class="golf-notes">Notes: <%= golf.notes %></p>
-      <% } %>
-      
-      <div class="golf-actions">
-        <a href="/users/<%= user._id %>/golfs/<%= golf._id %>/edit" class="golf-edit">Edit this Game</a>
-
-        <form action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE" method="POST">
-          <button type="submit" class="golf-delete">Delete this Game</button>
-        </form>
+      <div class="show-notes-container">
+        <% if (golf.notes && golf.notes !== 'none') { %>
+        <div class="show-notes">
+          <h2>Notes:</h2>
+          <p><%= golf.notes %></p>
+        </div>
+        <% } %>
       </div>
     </div>
   </body>
