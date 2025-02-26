@@ -8,6 +8,7 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="edit-body">
     <h1>Update <%=golf.course %></h1>
     <form
     action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=PUT"
@@ -50,5 +51,6 @@
   </div>
     <button type="submit">Update Game</button>
   </form>
+</div>
   </body>
 </html>

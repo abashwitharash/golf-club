@@ -9,6 +9,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Game</h1>
+    <div class="new-body">
 <form action="/users/<%= user._id %>/golfs" method="POST">
     <label for="course">Course:</label>
     <input type="text" name="course" id="course" />
@@ -33,5 +34,6 @@
   </div>
     <button type="submit">Add Game</button>
   </form>
+</div>
   </body>
 </html>
