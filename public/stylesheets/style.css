@@ -25,25 +25,29 @@ body {
   color: black;
   text-align: center;
   position: absolute;
-  top: 5%; 
-  left: 50%;
-  transform: translateX(-50%); 
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
   font-size: 5.6em;
-  width: 100%; 
+  width: max-content; 
+  display: flex;
+  justify-content: center;
 }
 
 
 .subheader {
-  margin: 0 20px 0 20px;
-  font-size: 2.4em;
+  margin: 0 20px;
+  font-size: 2.6em;
   color: black;
   text-align: center;
   position: absolute;
-  top: 35%; 
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.6em;
-  width: 100%; 
+  top: 35%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: max-content; 
+  justify-content: center;
 }
 
 .auth-links {
@@ -64,8 +68,6 @@ body {
     width: 12em;
     text-align: center;
     font-weight: bold;
-    font-family: 'Arial', sans-serif;
-    transition: all 0.3s ease-in-out;
 }
 
 .signup-link {
@@ -89,22 +91,25 @@ body {
     background-color: #009900;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
   .main-header {
     font-size: 1.8em; 
-    top: 8%;
+    top: 12%;
     text-align: center;
   }
 
   .subheader {
     font-size: 1.8em;
     top: 28%;
+    align-self: center;
+    margin-left: 0;
+
   }
 
   .signup-link,
   .signin-link {
-    width: 9em; 
-    font-size: 1em;
+    width: 8em; 
+    font-size: .5em;
   }
 }
 /* end of styling for main home page */
