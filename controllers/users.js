@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:userId', async (req, res) => {
     try {
         const user = await User.findById(req.params.userId);
+        
 
         res.render('users/show.ejs', { user, golfs: user.golfs }); // Pass user data to show.ejs
     } catch (error) {
@@ -24,7 +25,8 @@ router.get('/:userId', async (req, res) => {
         res.redirect('/');
     }
 });
-  
+
+
 
 
 module.exports = router;

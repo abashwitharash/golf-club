@@ -12,22 +12,35 @@
     <div class="show-body">
       <div class="show-header">
         <h1>Golf Course: <%= golf.course %></h1>
-        <div class="show-sidebar">
-          <div class="show-actions">
-            <form action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=DELETE" method="POST">
-            </form>
-          </div>
-          <p>Current Difficulty: <%= golf.difficulty %></p>
-        </div>
       </div>
-      <div class="show-notes-container">
-        <% if (golf.notes && golf.notes !== 'none') { %>
-        <div class="show-notes">
-          <h2>Notes:</h2>
-          <p><%= golf.notes %></p>
-        </div>
+
+      <div class="game-details">
+        <% if (golf.score) { %>
+          <p><strong>Score:</strong> <%= golf.score %></p>
+        <% } %>
+
+        <% if (golf.holes) { %>
+          <p><strong>Holes Played:</strong> <%= golf.holes %></p>
+        <% } %>
+
+        <% if (golf.difficulty && golf.difficulty !== 'none') { %>
+          <p><strong>Difficulty:</strong> <%= golf.difficulty %></p>
+        <% } %>
+
+        <% if (golf.notes) { %>
+          <div class="show-notes">
+            <h2>Notes:</h2>
+            <p><%= golf.notes %></p>
+          </div>
         <% } %>
       </div>
+
+      <div class="show-actions">
+        <a href="/">Back to Your Games</a>
+        </a>
+      </div>
+      
+      
     </div>
   </body>
 </html>

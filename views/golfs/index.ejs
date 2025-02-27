@@ -4,24 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>My Posts</title>
+    <title>My Golf Games</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %> 
+
     <div class="all-golfs-body">
-      <div class="all-golfs-header">
-    <h1>My Posts</h1>
-    <a  class="add-golf-link" href="/users/<%= user._id%>/golfs/new">Add a Game</a>
-  </div>
-    <ul>
-      <% golfs.forEach((golf)=>{ %>
-      <li>
-        <a href="/users/<%= user._id %>/golfs/<%= golf._id %>">
-        <%= golf.course%>
-        </a>
-      </li>
-      <% }) %>
-    </ul>
-  </div>
+      <div class="content-container">
+        <div class="left-section">
+          <div class="header-row">
+            <h1 class="all-golfs-header">My Games</h1>
+            <a class="add-golf-link" href="/users/<%= user._id %>/golfs/new">Add a Game</a>
+          </div>
+          <div class="user-info">
+            <h3>Welcome, <%= user.username %>!</h3>
+            <p>You've played <%= golfs.length %> games so far. Keep going!</p>
+          </div>
+          
+          <ul class="game-list">
+            <% golfs.forEach((golf) => { %>
+              <li>
+                <a href="/users/<%= user._id %>/golfs/<%= golf._id %>">
+                  <%= golf.course %>
+                </a>
+              </li>
+            <% }) %>
+          </ul>
+        </div>
+
+        <div class="right-section">
+          <img src="https://cdn.pixabay.com/photo/2018/09/18/09/30/golf-3685620_1280.jpg" 
+               alt="Golf Ball, Golf course, Grass image" 
+               class="golf-image">
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>

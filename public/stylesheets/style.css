@@ -7,17 +7,17 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #b0ecb3;
+    background-color:  #e0f2e9;
   }
  
-/* styling for main page for signing up  */
+/* styling for main page where you click to sign in or sign up  */
 .index-body {
   background-image: url('https://cdn.pixabay.com/photo/2020/07/10/07/29/golf-5389839_960_720.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   width: 100vw;
-  color: white;
+  color: black;
 }
 
 .main-header {
@@ -45,14 +45,6 @@ body {
   font-size: 2.6em;
   width: 100%; 
 }
-
-/* .index-container {
-  display: flex;
-  flex-direction: row;
-  justify-content:space-around;
-  align-items: center;
-  height: 100vh;
-} */
 
 .auth-links {
   display: flex;
@@ -97,53 +89,115 @@ body {
     background-color: #009900;
 }
 
+@media (max-width: 1150px) {
+  .main-header {
+    font-size: 1.8em; 
+    top: 8%;
+    text-align: center;
+  }
+
+  .subheader {
+    font-size: 1.8em;
+    top: 28%;
+  }
+
+  .signup-link,
+  .signin-link {
+    width: 9em; 
+    font-size: 1em;
+  }
+}
 /* end of styling for main home page */
 
 
 /* style sheets for the sign in and sign up page  */
 
-.signin-container,
-.signup-container {
+.container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 100vh; 
+  background-color: #e8f5e9;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
+.image-container img {
+  width: 100%; 
+  height: 100vh; 
+  object-fit: cover; 
+}
+
 h1 {
-  color: #1c2e5b;
+  color: #124116; 
+  font-weight: bold;
 }
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 20em;
-  height: 50%;
-  background-color: #f6e7e7;
-  padding: 30px 40px 20px 40px;
-  border-radius: 20px;
-  color: #4b598e;
+  width: 25em;
+  height: auto;
+  background-color: white; 
+  padding: 30px 40px 30px 40px;
+  border-radius: 12px;
+  border: 2px solid #124116;
   font-weight: bold;
+  color: #124116; 
 }
 
 input {
-  border: 1px solid rgb(182, 182, 182);
-  padding: 8px;
+  border: 3px solid #4a7c59;
+  padding: 10px;
   border-radius: 10px;
+  font-size: 1.2em;
+  background-color: #f8fff5;
+  color: solid black; 
+  font-weight: bold;
 }
 
 button {
-  padding: 10px;
-  background-color: #ce4866;
+  padding: 15px;
+  background-color: #2e6b3f; 
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   border: none;
-  margin: 15px 0;
+  margin: 25px 0;
   font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: #1d4727;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 20px;
+  }
+  
+  .image-container {
+    display: none;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
 
 /* end of style for sign in page and sign up page */
 
@@ -151,96 +205,190 @@ button {
 
 .all-golfs-body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start; 
+  background-color: #e8f5e9;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+.user-info {
+  font-size: 1.2em;
+  color: #124116;
+  margin-bottom: 20px;
+}
+
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
 }
 
 .all-golfs-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  width: 90%;
+  font-size: 2.2em;
+  color: #124116;
+  font-weight: bold;
 }
 
 .add-golf-link {
-  padding: 10px;
-  background-color: #ce4866;
+  background-color: #166534;
   color: white;
-  border-radius: 30px;
-  border: none;
-  font-size: 1.1em;
-  padding: 2px 25px;
+  border-radius: 20px;
+  padding: 8px 20px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .add-golf-link:hover {
-  background-color: #e84a6c;
+  background-color: #0d3a1a;
 }
 
-ul li a {
+.game-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.game-list li a {
+  display: block;
   text-decoration: none;
-  color: #1c2e5b;
-  width: 50%;
-  background-color: #f6e7e7;
-  border-radius: 30px;
-  padding: 10px 20px;
-  margin: 15px 0;
+  color: #124116;
+  background-color: #f8fff5;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 8px;
   font-weight: bold;
   text-align: center;
-  display: block; 
+  width: 85%;
 }
 
-ul {
-  list-style: none; 
-  padding: 0;      
-  margin: 0;        
-}
-
-
-ul li a:hover {
-  background-color: #4b598e;
+.game-list li a:hover {
+  background-color: #2e6b3f;
   color: white;
 }
 
+.right-section {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.golf-image {
+  width: 100%;
+  max-width: 750px; 
+  border-radius: 12px;
+}
+
+
+@media (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    align-items: center;
+  }
+
+  .header-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-golf-link {
+    margin-top: -20px;
+  }
+
+  .golf-image {
+    max-width: 90%;
+    margin-top: auto;
+  }
+}
 
 /* style ending of index.ejs for golfs */
 
-
-/* styling the new and update pages  */
-/* public/stylesheets/style.css */
-
-.new-body {
+.new-body, .edit-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh; 
+  background-color: #e0f2e9;
 }
 
-.new-body > form,
+
+.new-body > form, 
 .edit-body > form {
-  height: 70%;
-}
-
-textarea,
-select {
-  border: 1px solid rgb(182, 182, 182);
-  border-radius: 10px;
-  padding: 10px;
-}
-
-select {
-  margin-bottom: 10px;
-}
-
-.edit-body {
+  background-color: white; 
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  gap: 15px;
+}
+
+label {
+  font-weight: bold;
+  color: #0e3a14; 
+  font-size: 1.2em;
+}
+
+input, textarea, select {
+  border: 2px solid #24522d;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1.1em;
+  background-color: #f0fdf4;
+  color: #0e3a14;
+}
+
+
+button {
+  padding: 14px;
+  background-color: #0e3a14; 
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #09250e; 
+}
+
+@media (max-width: 600px) {
+  .new-body > form, 
+  .edit-body > form {
+    width: 90%;
+  }
+
+  label {
+    font-size: 1.1em; 
+  }
 }
 
 /* ending of styling new and update pages */

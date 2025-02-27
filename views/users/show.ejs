@@ -4,23 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Game stuff</title>
+    <title>Game Details</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= user.username %>'s Game</h1>
 
-    <% if (golfs && golfs.length > 0) { %>
-        <ul>
-            <% golfs.forEach(golf => { %>
+    <div class="all-golfs-body">
+      <div class="content-container">
+
+           <div class="left-section">
+          <div class="header-row">
+            <h1 class="all-golfs-header"><%= user.username %>'s Games</h1>
+          </div>
+          <div class="user-info">
+            <p><%= user.username %> has played <%= golfs.length %> <%= golfs.length === 1 ? "game" : "games" %> so far.</p>
+          </div>
+
+          <% if (golfs && golfs.length > 0) { %>
+            <ul class="game-list">
+              <% golfs.forEach(golf => { %>
                 <li>
-                    <a href="/users/<%=user.id%>/golfs/community/<%=user.id%>/<%=golf.id%>"><%= golf.course %></a>
+                  <a href="/users/<%= user._id %>/golfs/community/<%= user._id %>/<%= golf._id %>">
+                    <%= golf.course %>
+                  </a>
+                  <% if (golf.datePlayed) { %>
+                    <p class="game-date">Played on: <%= golf.datePlayed %></p>
+                  <% } %>
                 </li> 
-            <% }) %>
-        </ul>
-    <% } else { %>
-        <p>No Gamea Played Yet </p>
-    <% } %>
-    <a href="/">Back to My Games</a>
+              <% }) %>
+            </ul>
+          <% } else { %>
+            <p class="no-games-message">No Games Played Yet</p>
+          <% } %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
