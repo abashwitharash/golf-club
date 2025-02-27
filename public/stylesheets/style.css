@@ -185,6 +185,19 @@ button:hover {
   background-color: #1d4727;
 }
 
+.logo-container {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.logo-container img {
+  width: 200px;
+  height: auto;
+}
+
 @media (max-width: 600px) {
   .container {
     flex-direction: column;
