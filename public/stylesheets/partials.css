@@ -1,17 +1,31 @@
-.navbar {
-    display: flex;
-    flex-direction: row;
-    max-width: 100vw;
-    padding: 5px 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .authlink {
-    text-decoration: none;
-    margin: 0 15px;
-    color: #183059; 
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
+.logo-container {
+  display: flex;
+  align-items: right;
+}
+
+.logo-container img {
+  height: 100px; 
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 700px;
+  height: 55px;
+}
+
+.authlink {
+  text-decoration: none;
+  margin: 0 15px;
+  color: black; 
+  font-weight: bold;
+}
+
+.authlink img {
+  height: 100px; 
+  width: auto;
+  display: block; 
+  margin: 0 auto; 
+}
