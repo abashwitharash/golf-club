@@ -14,7 +14,10 @@
     action="/users/<%= user._id %>/golfs/<%= golf._id %>?_method=PUT"
     method="POST"
   >
-
+  <label for="date">Date Played:</label>
+  <input type="date" name="date" id="date" required 
+  value="<%= golf.date ? new Date(golf.date).toISOString().split('T')[0] : '' %>">
+  
     <label for="course">Course:</label>
     <input type="text" name="course" id="course" value="<%=golf.course %>"/>
   

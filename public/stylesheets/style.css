@@ -214,11 +214,15 @@ right: 0;
   form {
     width: 90%;
   }
+}
 
+@media (max-width: 1200px) {
   .logo-container img { 
     display: none;
   }
-}
+  }
+
+
 
 
 /* end of style for sign in page and sign up page */

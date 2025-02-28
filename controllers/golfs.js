@@ -127,5 +127,26 @@ router.get('/community/:userId/:golfId', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    // currentUser.golfs.push(req.body);
+    const {golf, public, prompt, date} = req.body // extract data from req.body (req.body relates to form input)
+    const newGolf = {
+      date: new Date(date),
+      golf,
+      public,
+      prompt: prompt
+    }
+    currentUser.golfs.push(newGolf) // to add new entry to entry array
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/golfs`);
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+
+});
+
 
 module.exports = router;

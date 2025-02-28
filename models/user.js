@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const golfsSchema = new mongoose.Schema({
+  date: {
+    type: Date,
+  },
   course: {
     type: String, 
     required: true,

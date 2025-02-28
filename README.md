@@ -64,11 +64,9 @@ Attributions
 
 ## Next Steps
 
-> Add a date feature
+> Improve UI animations for better user experience
 
 >>Add a chat forum for members to stay connected and chat with each other 
 
 >>>Input member photos from their experience
-
->>>>Improve UI animations for better user experience
 

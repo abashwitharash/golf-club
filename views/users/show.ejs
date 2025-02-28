@@ -27,9 +27,6 @@
                   <a href="/users/<%= user._id %>/golfs/community/<%= user._id %>/<%= golf._id %>">
                     <%= golf.course %>
                   </a>
-                  <% if (golf.datePlayed) { %>
-                    <p class="game-date">Played on: <%= golf.datePlayed %></p>
-                  <% } %>
                 </li> 
               <% }) %>
             </ul>

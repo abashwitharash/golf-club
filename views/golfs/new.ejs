@@ -11,6 +11,8 @@
     <h1>Add a New Game</h1>
     <div class="new-body">
 <form action="/users/<%= user._id %>/golfs" method="POST">
+  <label for="date">Date Played:</label>
+  <input type="date" name="date" id="date" required>
     <label for="course">Course:</label>
     <input type="text" name="course" id="course" />
   
