@@ -186,10 +186,10 @@ button:hover {
 }
 
 .logo-container {
-  position: absolute;
-  top: 5%;
+  position: fixed; 
+  top: -30px; 
   left: 0;
-  right: 0;
+right: 0;
   text-align: center;
 }
 
@@ -213,6 +213,10 @@ button:hover {
 
   form {
     width: 90%;
+  }
+
+  .logo-container img { 
+    display: none;
   }
 }
 
