@@ -56,11 +56,10 @@ Attributions
 
 * Mongoose
 
-* BcrptyJS
+* MongoDB
 
 * Express 
 
-* Morgan
 
 ## Next Steps
 
