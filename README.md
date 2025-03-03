@@ -14,7 +14,8 @@ By creating a centralized hub for golf enthusiasts, the app helps bridge the gap
 
 ## Getting Started
 
-[JOIN THE CLUB HERE](https://arash-golfclub-f4f5027b54cc.herokuapp.com/)
+* [TRELLO BOARD (Project Planning)](https://trello.com/b/3rFPcjQ0/golf-trello)
+* [JOIN THE CLUB HERE](https://arash-golfclub-f4f5027b54cc.herokuapp.com/)
 
 ### Instructions
 
@@ -69,3 +70,4 @@ Attributions
 
 >>>Input member photos from their experience
 
+>>>> More interactive features on profiles to put more information
