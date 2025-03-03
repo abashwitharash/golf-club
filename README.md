@@ -41,6 +41,14 @@ Attributions
 
 * [PIXABAY](https://pixabay.com)
 
+* [GOLFBALL, GOLF COURSE PHOTO](https://cdn.pixabay.com/photo/2018/09/18/09/30/golf-3685620_1280.jpg)
+
+* [GOLF COURSE ON MAIN PAGE](https://cdn.pixabay.com/photo/2020/07/10/07/29/golf-5389839_960_720.jpg)
+
+* [WOMAN SWINGING CLUB ON SIGNUP AND SIGNIN PAGE](https://cdn.pixabay.com/photo/2014/12/01/15/50/golf-552906_1280.jpg)
+
+* [GOLF BALL ON EDGE OF GREEN](https://cdn.pixabay.com/photo/2016/03/27/19/54/golf-1284012_1280.jpg)
+
 * [HEROKU](https://www.heroku.com)
 
 * [CHATGPT](WWW.chatgpt.com)
